@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="bd.css">
+    <link href="https://fonts.cdnfonts.com/css/romance-breakin" rel="stylesheet">
+                
+</head>
+<body>
+    <div class="container">
+        <div class="icon" onclick="showCard()">
+            <div class="flower"> 
+                <div class="petal petal1"></div>
+                <div class="petal petal2"></div>
+                <div class="petal petal3"></div>
+                <div class="petal petal4"></div>
+                <div class="petal petal5"></div>
+                <div class="petal petal6"></div>
+                <div class="petal petal7"></div>
+                <div class="petal petal8"></div>
+                <div class="center"></div>
+            </div>
+        </div>
+        <div class="card" id="card">
+            <div class="falling-stars" id="starContainer">
+                <div class="block">
+                    <div id="padding">
+
+                        <h2>Happy Birthday, My Beloved Girl! FURIRIN!!!</h2>
+                        <p>
+                            Today is not just a celebration of another year in your life, but a testament to your strength, resilience, and unwavering spirit. 
+                            I know your journey hasn't always been easy—there were days when the darkness felt overwhelming, when your steps felt heavy, and your heart was filled with doubt. 
+                            But look at you now, my love. You have fought, endured, and risen above it all. 
+                            You have proven that even when storms rage, the rainbow always awaits on the other side. 
+                            I am so incredibly proud of you, more than words can ever express. 
+                            You are a light that continues to shine, even when you feel dim. 
+                            Today, I hope you celebrate not just your birthday, but also the incredible strength that lies within you. 
+                            I love you, and I will always be by your side. 💖✨
+                        </p>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="img-card">
+                        <div class="img-animation">
+                            <img src="assets/20241216_223247.jpg" alt="Special Memory" class="pic">
+                            <img src="assets/20250305_104139.jpg" alt="Special Memory" class="pic">    
+                            <img src="assets/20250310_112408.jpg" alt="Special Memory" class="pic">
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    
+                    <div class="first-sentences">
+                        <img src="assets/yangyanglove.jpg" alt="">
+                        <p>Wishing you all the happiness in the world. You are the best thing that ever happened to me!, and im glad i meet you out of all people 💖</p>
+                        <img src="assets/yangyanglove.jpg" alt="">
+                    </div>
+                    <p>to be honest i dont know how to start this birthday card</p>
+                    <div class="section-1">
+                        <p>but hey i think this cute pic can help ehe</p>
+                        <img src="assets/love girl.jpg" alt="cute pic">
+                    </div>
+                </div>
+                <div class="block">
+                  
+                    <p>lets talk about memories, the pic below is our journey in maikura ehehe</p>
+                    <img src="assets/maikura.png" alt="" id="maikura">
+                    <p>it was very fun, when we still play without keep inventory on LMAO, and we always scared of losing our stuff, i remember i got emotionally defeated when we first lost our stuff LMAOO, i was childish</p>
+                    <p>ah if you look closely we still dont have green house yet and automatic sugar farm LMAO, we are still poor ehe TuT</p>
+                    <p>i kinda want to give all the memories picture here but its kinda hard to...find a pic cuz we dont have any pic and most of the time we are texting or playing without taking a pic ;u;</p>
+                    <p>but hey atleast i enjoy my time the most with you my beloved girlfriend/future wife</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="birthdaySong" src="assets/Gotoubun no Hanayome  Season 2 OST - 五等分の花嫁.mp3" loop></audio>
+    <script>
+        function showCard() {
+            const card = document.getElementById("card");
+            const song = document.getElementById("birthdaySong");
+            card.classList.toggle("show");
+            if (card.classList.contains("show")) {
+                song.play();
+            } else {
+                song.pause();
+                song.currentTime = 0;
+            }
+        }
+
+        function autoScrollToCard() {
+            const card = document.getElementById("card");
+            window.scrollTo({
+                top: card.offsetTop,
+                behavior: "smooth"
+            });
+        }
+
+        function startStars() {
+            const starContainer = document.getElementById("starContainer");
+            setInterval(() => {
+                let star = document.createElement("div");
+                star.classList.add("star");
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.top = Math.random() * -10 + "vh";
+                star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                starContainer.appendChild(star);
+                setTimeout(() => star.remove(), 5000);
+            }, 200);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #fdf5e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Romance Breakin', sans-serif;
+}
+
+p {
+  font-size: 20px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.icon {
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.card {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 235, 205, 0.95);
+  border-radius: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  box-sizing: border-box;
+  animation: fadeIn 0.5s ease forwards;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.img-card {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  animation: ease;
+}
+
+.img-animation {
+  overflow: hidden;
+}
+
+.pic:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.card.show {
+  display: block;
+}
+
+.card img {
+  max-width: 20%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#maikura {
+  max-width: 78%;
+}
+
+/* From Uiverse.io by tako143 */
+.flower {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.petal {
+  position: absolute;
+  width: 35px;
+  height: 60px;
+  background: linear-gradient(180deg, #fcdbdf, #fd688d);
+  border-radius: 50%;
+}
+
+.petal1 {
+  transform: rotate(0deg) translateY(-50%);
+  animation-delay: 0.1s;
+}
+
+.petal2 {
+  transform: rotate(45deg) translateY(-50%);
+  animation-delay: 0.2s;
+}
+
+.petal3 {
+  transform: rotate(90deg) translateY(-50%);
+  animation-delay: 0.3s;
+}
+
+.petal4 {
+  transform: rotate(135deg) translateY(-50%);
+  animation-delay: 0.4s;
+}
+
+.petal5 {
+  transform: rotate(180deg) translateY(-50%);
+  animation-delay: 0.5s;
+}
+
+.petal6 {
+  transform: rotate(225deg) translateY(-50%);
+  animation-delay: 0.6s;
+}
+
+.petal7 {
+  transform: rotate(270deg) translateY(-50%);
+  animation-delay: 0.7s;
+}
+
+.petal8 {
+  transform: rotate(315deg) translateY(-50%);
+  animation-delay: 0.8s;
+}
+
+.center {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #f1d2d2;
+  border-radius: 50%;
+}
+
+.flower:hover .petal {
+  animation-name: changeColor;
+  animation-duration: 8s;
+  animation-direction: reverse;
+  animation-iteration-count: infinite;
+}
+
+.flower:hover {
+  animation-name: rotateFlower;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes changeColor {
+  0% {
+    background: linear-gradient(180deg, #fcdbdf, #fd688d);
+  }
+
+  25% {
+    background: linear-gradient(180deg, #fcd2e3, #fa6094);
+  }
+
+  50% {
+    background: linear-gradient(180deg, #fabefc, #c34ec7);
+  }
+
+  75% {
+    background: linear-gradient(180deg, #f7d6d6, #fd6a6a);
+  }
+
+  100% {
+    background: linear-gradient(180deg, #fcd3fc, #e844f7);
+  }
+}
+
+@keyframes rotateFlower {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.5) rotate(360deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.first-sentences {
+  display: flex;
+  align-items: center;
+}
+
+/* Tambahkan animasi fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.falling-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle linear infinite;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  50% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.8;
+  }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50% exit 80%;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Pusatkan secara vertikal */
+  align-items: center; /* Pusatkan secara horizontal */
+  height: 100vh; /* Gunakan tinggi viewport penuh */
+  text-align: center;
+  padding: 20px; 
+}
