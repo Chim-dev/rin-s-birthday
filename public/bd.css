@@ -35,7 +35,15 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 235, 205, 0.95);
+  background: radial-gradient(
+    125% 125% at -2% 101%,
+    rgb(199, 150, 245) 10.5%,
+    rgb(234, 163, 252) 16%,
+    rgb(233, 175, 245) 17.5%,
+    rgb(255, 203, 248) 25%,
+    rgba(238, 174, 202, 1) 40%,
+    rgba(202, 179, 214, 1) 65%,
+    rgba(148, 201, 233, 1) 100%);
   border-radius: 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   padding: 50px;
@@ -276,4 +284,35 @@ p {
   height: 100vh; /* Gunakan tinggi viewport penuh */
   text-align: center;
   padding: 20px; 
+}
+
+/* From Uiverse.io by elijahgummer */ 
+.container-bg {
+  width: 100%;
+  height: 100%;
+  background: lightblue;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-bg::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #3498db 10%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #3498db 20%);
+  background-size: 30px 30px; /* Adjust the size of the pattern */
+  animation: moveBackground 8s linear infinite; /* Adjust the animation duration and timing function */
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20%, 20%);
+  }
 }
